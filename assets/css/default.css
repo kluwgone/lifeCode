@@ -1,0 +1,20 @@
+.header{
+    padding: 10px;
+    background-color: #18a8df;
+    color: white;
+    font-weight: 400;
+}
+.leftmenu{
+    padding: 10px;
+}
+.maincontent{
+    padding: 10px;
+}
+.maintable td{
+    width: 10px;
+    height: 10px;
+    border: 1px solid black;
+}
+.active{
+    background-color: #020202;
+}
