@@ -17,17 +17,22 @@ $(document).ready(function() {
         console.log(alive);
 
         $.ajax({
-            url: 'work.php',
+            url: 'work.php?width='+width+'&height='+height,
             type: "POST",
             dataType: "json",
             data: {
                cells : alive
             },
             success: function(data){
-                $.each(data.number, function(index,value){
+                $.each(data.new, function(index,value){
                     var input = $("#"+value);
                     console.log(input);
                     input.addClass('active');
+                });
+                $.each(data.delete, function(index,value){
+                    var input = $("#"+value);
+                    console.log(input);
+                    input.removeClass('active');
                 });
 
             }
