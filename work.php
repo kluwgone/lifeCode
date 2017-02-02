@@ -15,7 +15,7 @@ $table = new Table();
 
 for ($y = 0; $y < $table->height; $y++) {
     for ($x = 0; $x < $table->width; $x++) {
-        $neighbor_count = getAliveNeighborCount($x,$y,$aliveCells);
+        $neighbor_count = getNeighborLive($x,$y,$aliveCells);
         if (isset($aliveCells[$y][$x]) && ($neighbor_count < 2 || $neighbor_count > 3)) {
           $dead[] = [$y, $x];
         }
@@ -25,7 +25,7 @@ for ($y = 0; $y < $table->height; $y++) {
     }
 }
 
-function getAliveNeighborCount($x, $y,$aliveCells) {
+function getNeighborLive($x, $y,$aliveCells) {
     $table = new Table();
     $alive_count = 0;
 
